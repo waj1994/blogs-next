@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build --turbopack & next-sitemap",
+    "build": "next build --turbopack && next-sitemap",
     "dev": "next dev --turbopack",
     "format": "prettier --write .",
     "lint": "eslint",
