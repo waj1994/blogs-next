@@ -52,7 +52,7 @@ export default function ThemeButton() {
   return (
     <button
       onClick={onChange}
-      className="w-12 h-6 rounded-full bg-gray-200 px-1 cursor-pointer dark:bg-gray-700"
+      className="w-12 h-6 rounded-full bg-gray px-1 cursor-pointer dark:bg-gray-700"
     >
       <div
         className={clsx(

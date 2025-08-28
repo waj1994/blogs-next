@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import BaseSearch from './base-search';
 import ThemeButton from './theme-button';
 
 export default function BaseHeader() {
@@ -12,7 +13,10 @@ export default function BaseHeader() {
           W
         </Link>
       </h2>
-      <ThemeButton />
+      <div className="flex items-center gap-x-4">
+        <BaseSearch />
+        <ThemeButton />
+      </div>
     </header>
   );
 }

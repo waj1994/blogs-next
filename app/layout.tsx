@@ -15,6 +15,10 @@ export default async function RootLayout({
 }>) {
   return (
     <html>
+      <meta
+        name="algolia-site-verification"
+        content="9821763005CA5C62"
+      />
       <body>
         <BaseHeader />
         <main className="max-w-[75ch] mx-auto px-7 pb-10">{children}</main>
