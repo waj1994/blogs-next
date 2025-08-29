@@ -26,11 +26,12 @@
   @apply transition-all duration-300;
 }
 
-html {
-  scrollbar-gutter: stable;
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
+  margin-right: 0 !important;
+
+  @media (min-width: 768px) {
+    width: calc(100vw - 20px);
+  }
 }
