@@ -1,6 +1,5 @@
-import { getPostsList, resolveMarkdown } from '../utils';
-
 import dayjs from 'dayjs';
+import { getPostsList, resolveMarkdown } from '../utils';
 
 type Params = Promise<{ slug: string }>;
 
@@ -26,6 +25,7 @@ export default async function Page({ params }: { params: Params }) {
 			</div>
 			<article
 				className="markdown-body"
+				// biome-ignore lint/security/noDangerouslySetInnerHtml: 渲染markdown解析的dom
 				dangerouslySetInnerHTML={{ __html: html }}
 			/>
 		</>

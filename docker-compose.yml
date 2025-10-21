@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  blogs:
+    build: .
+    ports:
+      - "88:88"
+    restart: unless-stopped

@@ -8,9 +8,9 @@ export default function BaseHeader() {
 			<h2 className="text-xl font-bold">
 				<Link
 					href="/"
-					className="text-red-200"
+					className="text-gray-600"
 				>
-					W
+					w
 				</Link>
 			</h2>
 			<div className="flex items-center gap-x-4">
