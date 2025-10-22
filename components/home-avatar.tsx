@@ -7,7 +7,7 @@ export default function HomeAvatar() {
 				width={120}
 				height={120}
 				src="/avatar.jpg"
-				className="rounded-full border-8 border-gray-200 dark:border-gray-800 !mx-auto mb-2 rotate-0 hover:rotate-360"
+				className="rounded-full border-4 border-gray-200 dark:border-gray-800 !mx-auto mb-2 rotate-0 hover:rotate-360"
 				alt="头像"
 			/>
 			<h3>{`I'm 王杰`}</h3>
