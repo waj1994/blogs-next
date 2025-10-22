@@ -3,5 +3,5 @@ services:
   blogs:
     build: .
     ports:
-      - "88:88"
+      - "8000:8000"
     restart: unless-stopped
