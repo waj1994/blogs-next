@@ -14,7 +14,7 @@ export default function BaseHeader() {
 				</Link>
 			</h2>
 			<div className="flex items-center gap-x-4">
-				<BaseSearch />
+				{/* <BaseSearch /> */}
 				<ThemeButton />
 			</div>
 		</header>
