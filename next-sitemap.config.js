@@ -1,7 +1,7 @@
 /** @type {import('next-sitemap').IConfig} */
 const config = {
 	// 站点基础 URL（必填）
-	siteUrl: process.env.SITE_URL || 'https://iwangjie.top',
+	siteUrl: process.env.SITE_URL || 'http://iwangjie.top:5173',
 
 	// 生成的 sitemap 文件路径
 	generateRobotsTxt: true, // 自动生成 robots.txt
