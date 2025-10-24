@@ -1,7 +1,8 @@
 'use client';
 
 import clsx from 'clsx';
-import { useState } from 'react';
+import { useContext, useEffect } from 'react';
+import { ThemeContext } from '@/app/layout';
 
 export const MoonIcon = (props: { className?: string }) => {
 	return (
@@ -42,11 +43,20 @@ export const SunIcon = (props: { className?: string }) => {
 };
 
 export default function ThemeButton() {
-	const [theme, setTheme] = useState('light');
+	const { theme, setTheme } = useContext(ThemeContext);
+
+	useEffect(() => {
+		const theme = (localStorage.getItem('theme') || 'light') as
+			| 'light'
+			| 'dark';
+		document.documentElement.setAttribute('class', theme);
+		setTheme(theme);
+	}, []);
 	const onChange = () => {
 		const newTheme = theme === 'light' ? 'dark' : 'light';
 		document.documentElement.setAttribute('class', newTheme);
 		setTheme(newTheme);
+		localStorage.setItem('theme', newTheme);
 	};
 
 	return (

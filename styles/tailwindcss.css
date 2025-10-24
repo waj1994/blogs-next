@@ -4,3 +4,27 @@
 @utility flex-center {
 	@apply flex items-center justify-center;
 }
+
+@theme static {
+	--color-tip: var(--theme-color-tip);
+	--color-tip-bg-default: var(--theme-color-tip-bg-default);
+	--color-tip-bg: var(--theme-color-tip-bg);
+	--color-tip-bg-warning: var(--theme-color-tip-bg-warning);
+	--color-tip-bg-danger: var(--theme-color-tip-bg-danger);
+}
+
+:root {
+	--theme-color-tip: #3c3c43;
+	--theme-color-tip-bg-default: #8e96aa24;
+	--theme-color-tip-bg: #646cff24;
+	--theme-color-tip-bg-warning: #eab30824;
+	--theme-color-tip-bg-danger: #f43f5e24;
+}
+
+:root.dark {
+	--theme-color-tip: #ccc;
+	--theme-color-tip-bg-default: #8e96aa3c;
+	--theme-color-tip-bg: #646cff3c;
+	--theme-color-tip-bg-warning: #eab2083c;
+	--theme-color-tip-bg-danger: #f43f5d3c;
+}

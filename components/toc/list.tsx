@@ -1,16 +1,22 @@
 'use client';
 
-import { Anchor } from 'antd';
+import { Anchor, theme as AntdTheme, ConfigProvider } from 'antd';
 import clsx from 'clsx';
-import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
+import { ThemeContext } from '../../app/layout';
 import MenuIcon from '../../icons/menu.svg';
+
+const { defaultAlgorithm, darkAlgorithm } = AntdTheme;
 
 export default function TocList({ html }: { html: string }) {
 	const [showTrigger, setShowTrigger] = useState(false);
 	const [showTocModel, setShowTocModel] = useState(false);
 	const tocRef = useRef<HTMLDivElement>(null);
+
+	const { theme } = useContext(ThemeContext);
+
+	const localTheme = theme === 'dark' ? darkAlgorithm : defaultAlgorithm;
 
 	useEffect(() => {
 		setShowTrigger(true);
@@ -43,17 +49,23 @@ export default function TocList({ html }: { html: string }) {
 
 	// biome-ignore lint/correctness/noNestedComponentDefinitions: 内部复用
 	const List = ({ offsetTop }: { offsetTop: number }) => (
-		<Anchor
-			offsetTop={offsetTop}
-			items={list.map(item => ({
-				key: item.text,
-				href: `#${item.text}`,
-				title: item.text,
-				className: clsx('text-sm', {
-					'!pl-7': item.level === '3'
-				})
-			}))}
-		/>
+		<ConfigProvider
+			theme={{
+				algorithm: localTheme
+			}}
+		>
+			<Anchor
+				offsetTop={offsetTop}
+				items={list.map(item => ({
+					key: item.text,
+					href: `#${item.text}`,
+					title: item.text,
+					className: clsx('text-sm', {
+						'!pl-7': item.level === '3'
+					})
+				}))}
+			/>
+		</ConfigProvider>
 	);
 
 	// biome-ignore lint/correctness/noNestedComponentDefinitions: 内部复用

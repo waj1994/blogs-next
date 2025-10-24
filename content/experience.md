@@ -1,6 +1,6 @@
 ---
 title: 那些吃过的苦，踩过的坑
-date: '2025-07-24'
+date: "2025-07-24"
 ---
 
 ### vue3 中报`TypeError: Cannot read properties of null (reading 'emitsOptions')`
@@ -13,3 +13,19 @@ date: '2025-07-24'
 > 3 的 slot 机制会自动处理 vnode 的生命周期和上下文，确保插槽内容在父组件 props 变化时能正确地重新渲染和挂载。而你直接用 h 创建 vnode 并通过 props 传递时，Vue 没法自动追踪这些 vnode 的依赖和生命周期，导致 props 变化时，旧的 vnode 可能被复用或丢失上下文，访问到 null 的 component 实例，从而报 “emitsOptions” 的错误。
 
 解决方案：使用 jsx 声明组件或者使用单组件
+
+:::info
+asdfasdfad
+:::
+
+:::warning
+asdfasdfad
+:::
+
+:::danger
+asdfasdfad
+:::
+
+:::details
+asdfasdfad
+:::

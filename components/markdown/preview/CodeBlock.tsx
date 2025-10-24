@@ -74,7 +74,7 @@ function CodeBlock({ code, language }: { code: string; language: string }) {
 			className={clsx(preClassName, 'text-[14px]')}
 			style={preStyle}
 		>
-			<div className="flex items-center justify-between px-4 py-3 bg-[#fafafa] select-none">
+			<div className="flex items-center justify-between px-4 py-2 bg-[#ededed] dark:bg-black select-none">
 				<div
 					className="flex items-center gap-x-2 cursor-pointer"
 					onClick={handleCollapsed}
@@ -97,7 +97,12 @@ function CodeBlock({ code, language }: { code: string; language: string }) {
 			</div>
 
 			<div
-				className={clsx('bg-white overflow-y-hidden', { '!h-0': collapsed })}
+				className={clsx(
+					'bg-white dark:bg-[var(--bgColor-default)] overflow-y-hidden',
+					{
+						'!h-0': collapsed
+					}
+				)}
 			>
 				<div className="p-4">
 					<code className={`language-${language}`}>

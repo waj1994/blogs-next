@@ -1,7 +1,13 @@
 import dayjs from 'dayjs';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import HomeAvatar from '@/components/home-avatar';
 import { getPostsList, sortByTime } from './posts/utils';
+
+export const metadata: Metadata = {
+	title: '欢迎来到我的博客',
+	description: '欢迎来到我的博客'
+};
 
 export default async function Home() {
 	const res = await getPostsList();
