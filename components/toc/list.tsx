@@ -72,10 +72,10 @@ export default function TocList({ html }: { html: string }) {
 	const ModelList = () => {
 		return (
 			<div
-				className="fixed top-15 left-0 w-full h-screen bg-black/20 dark:bg-black z-100 lg:hidden"
+				className="fixed top-15 left-0 w-full h-screen bg-black/50 dark:bg-white/30 z-100 lg:hidden"
 				onClick={() => setShowTocModel(false)}
 			>
-				<div className="py-4 bg-white">
+				<div className="py-4 bg-white dark:bg-black">
 					<div
 						ref={tocRef}
 						className="max-h-100 overflow-y-auto px-4 relative"
@@ -96,7 +96,7 @@ export default function TocList({ html }: { html: string }) {
 			{showTrigger &&
 				createPortal(
 					<MenuIcon
-						className="w-5 lg:hidden cursor-pointer"
+						className="w-5 lg:hidden cursor-pointer text-gray-600"
 						onClick={() => setShowTocModel(!showTocModel)}
 					/>,
 					document.querySelector('.header-handler')!
