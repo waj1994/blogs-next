@@ -9,6 +9,14 @@ const nextConfig: NextConfig = {
 	images: {
 		domains: ['iwangjie.top'], // 允许加载的图片域名
 		minimumCacheTTL: 60 * 60 * 24 * 30 // 静态图片缓存30天
+	},
+	turbopack: {
+		rules: {
+			'*.svg': {
+				loaders: ['@svgr/webpack'],
+				as: '*.js'
+			}
+		}
 	}
 };
 

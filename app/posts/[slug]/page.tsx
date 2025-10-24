@@ -1,5 +1,7 @@
 import dayjs from 'dayjs';
-import { getPostsList, resolveMarkdown } from '../utils';
+import Preview from '@/components/markdown/preview';
+import TocList from '@/components/toc/list';
+import { getPostsList } from '../utils';
 
 type Params = Promise<{ slug: string }>;
 
@@ -10,25 +12,24 @@ export default async function Page({ params }: { params: Params }) {
 		return post.slug === slug;
 	})!;
 
-	const html = await resolveMarkdown(post.content);
-
 	return (
-		<>
-			<div className="flex flex-col gap-4 mb-8">
-				<h1 className="text-3xl font-bold">{post.metadata.title}</h1>
-				<div className="text-sm text-gray-500">
-					<span>
-						{dayjs(post.metadata.date).format('YYYY-MM-DD')} ·{' '}
-						{post.readingTime}
-					</span>
+		<div className="lg:pl-60 inline-flex gap-x-10">
+			<div className="max-w-[75ch] w-full">
+				<div className="flex flex-col gap-4 mb-8">
+					<h1 className="text-3xl font-bold">{post.metadata.title}</h1>
+					<div className="text-sm text-gray-500">
+						<span>
+							{dayjs(post.metadata.date).format('YYYY-MM-DD')} ·{' '}
+							{post.readingTime}
+						</span>
+					</div>
 				</div>
+				<Preview content={post.content} />
 			</div>
-			<article
-				className="markdown-body"
-				// biome-ignore lint/security/noDangerouslySetInnerHtml: 渲染markdown解析的dom
-				dangerouslySetInnerHTML={{ __html: html }}
-			/>
-		</>
+			<div className="w-50 hidden lg:block">
+				<TocList html={post.html} />
+			</div>
+		</div>
 	);
 }
 

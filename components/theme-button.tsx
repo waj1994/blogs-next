@@ -51,6 +51,7 @@ export default function ThemeButton() {
 
 	return (
 		<button
+			type="button"
 			onClick={onChange}
 			className="w-12 h-6 rounded-full bg-gray px-1 cursor-pointer dark:bg-gray-700"
 		>

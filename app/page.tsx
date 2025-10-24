@@ -1,6 +1,6 @@
-import HomeAvatar from '@/components/home-avatar';
 import dayjs from 'dayjs';
 import Link from 'next/link';
+import HomeAvatar from '@/components/home-avatar';
 import { getPostsList, sortByTime } from './posts/utils';
 
 export default async function Home() {
@@ -8,7 +8,7 @@ export default async function Home() {
 	const list = sortByTime(res);
 
 	return (
-		<>
+		<div className="max-w-[75ch] flex-1">
 			<HomeAvatar />
 
 			<div>
@@ -43,6 +43,6 @@ export default async function Home() {
 						);
 					})}
 			</div>
-		</>
+		</div>
 	);
 }

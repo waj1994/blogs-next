@@ -38,6 +38,11 @@
       },
       "suspicious": {
         "noUnknownAtRules": "off"
+      },
+      "a11y": {
+        "useValidAnchor": "off",
+        "noStaticElementInteractions": "off",
+        "useKeyWithClickEvents": "off"
       }
     }
   },

@@ -14,14 +14,10 @@ export default async function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html>
-			{/* <meta
-				name="algolia-site-verification"
-				content="9821763005CA5C62"
-			/> */}
+		<html lang="zh-CN">
 			<body>
 				<BaseHeader />
-				<main className="max-w-[75ch] mx-auto px-7 pb-10">{children}</main>
+				<main className="px-7 pb-10 flex justify-center">{children}</main>
 			</body>
 		</html>
 	);
